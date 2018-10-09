@@ -12,6 +12,15 @@ It is heavily based on [Akka Samples](https://github.com/akka/akka-samples) so y
 
 > In order to showcase the [remote capabilities of Akka](http://doc.akka.io/docs/akka/2.5/java/remoting.html) we thought a remote calculator could do the trick. This sample demonstrates both remote deployment and look-up of remote actors.
 
+## Project structure
+
+There are two separated applications here:
+
+1. `akka-remote-service`: it is the Akka application that exposes the remote actor.
+2. `play-client-app`: it is the Play application that lookup the remote actor.
+
+The two applications are present ion this repository just for convenience, but in a real application, they may be completely separated and must run and be deployed in isolation.
+
 ## Step by Step guide
 
 This a step-by-step guide describing how this application was created. If you want to see if running, jump to 
