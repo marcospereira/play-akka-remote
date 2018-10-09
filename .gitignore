@@ -1,4 +1,6 @@
+build
 target
 logs
 .g8
 .idea
+.gradle

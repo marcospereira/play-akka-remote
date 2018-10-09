@@ -1,0 +1,5 @@
+include 'actor-ops', 'akka-remote-service', 'play-client-app'
+
+project(':actor-ops').projectDir = new File(settingsDir, 'actor-ops')
+project(':akka-remote-service').projectDir = new File(settingsDir, 'akka-remote-service')
+project(':play-client-app').projectDir = new File(settingsDir, 'play-client-app')

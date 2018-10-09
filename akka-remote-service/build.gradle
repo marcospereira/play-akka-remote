@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = "actors.CalculatorApplication"
+
+dependencies {
+    compile project(':actor-ops')
+    compile group: "com.typesafe.akka", name: "akka-remote_${scalaVersion}", version: "${akkaVersion}"
+}

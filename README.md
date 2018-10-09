@@ -24,6 +24,10 @@ Add the following dependency to your project:
 // When using sbt
 libraryDependencies += "com.typesafe.akka" %% "akka-remote" % "2.5.17"
 ```
+
+```groovy
+// When using Gradle
+compile group: "com.typesafe.akka", name: "akka-remote_${scalaVersion}", version: "${akkaVersion}"
 ```
 
 ### Copy the code from Akka Sample
@@ -120,6 +124,12 @@ To start a remote calculator actor, we can adapt the code from Akka Sample and a
 sbt akka-remote-service/run
 ```
 
+Or for Gradle:
+
+```bash
+./gradlew akka-remote-service:run
+```
+
 This is just emulating a remote application.
 
 ### Start the Play application
@@ -130,10 +140,10 @@ Now start the Play application in another terminal:
 sbt play-client-app/run
 ```
 
-This is just emulating a remote application. Now start the Play application in another terminal:
+Or for Gradle:
 
 ```bash
-sbt run
+./gradlew play-client-app:runPlayBinary
 ```
 
 Open <http://localhost:9000> and you will then see the following logs:
