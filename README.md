@@ -14,12 +14,16 @@ It is heavily based on [Akka Samples](https://github.com/akka/akka-samples) so y
 
 ## Step by Step guide
 
+This a step-by-step guide describing how this application was created. If you want to see if running, jump to 
+
 ### Add Akka Remote dependency to your project
 
 Add the following dependency to your project:
 
 ```scala
-libraryDependencies += "com.typesafe.akka" %% "akka-remote" % "2.5.13" 
+// When using sbt
+libraryDependencies += "com.typesafe.akka" %% "akka-remote" % "2.5.17"
+```
 ```
 
 ### Copy the code from Akka Sample
@@ -104,12 +108,26 @@ If we start the application at this point using `sbt run`, we will see the follo
 
 It is failing because we don't have a `Calculator` actor running anywhere. This is expected we were just trying to verify if everything was working as expected.
 
+## Running
+
+You need to start both the remove Akka service, which will exposes the `Calculator` actor, and also the Play application which will use this remove actor.
+
 ### Starting a remote calculator Actor
 
 To start a remote calculator actor, we can adapt the code from Akka Sample and add a new class to our project. The new class is `actors.Calculator` application which has a `main` method. Also, we need specific configuration to this "application". So we created a `conf/calculator.conf` file. To run it successfully, run the following command in a terminal:
 
 ```bash
-sbt "runMain actors.CalculatorApplication"
+sbt akka-remote-service/run
+```
+
+This is just emulating a remote application.
+
+### Start the Play application
+
+Now start the Play application in another terminal:
+
+```bash
+sbt play-client-app/run
 ```
 
 This is just emulating a remote application. Now start the Play application in another terminal:
